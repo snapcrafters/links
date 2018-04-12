@@ -1,0 +1,33 @@
+name: links
+version: '2.15'
+summary: Web browser running in text mode
+description: |
+  Links is a text mode WWW browser, similar to Lynx. It displays tables,
+  frames, downloads on background, uses HTTP/1.1 keepalive connections.
+
+grade: stable
+confinement: strict
+
+apps:
+  links:
+    command: links
+    plugs:
+      - network
+      - network-bind
+      - home
+      - browser-support
+
+parts:
+  links2:
+    plugin: make
+    source: http://links.twibright.com/download/links-2.15.tar.gz
+    source-type: tar
+    build-packages:
+      - make
+      - gcc
+      - libssl-dev
+    build: |
+      ./configure --with-ssl
+      make
+    install: |
+      cp links $SNAPCRAFT_PART_INSTALL
