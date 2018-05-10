@@ -12,22 +12,18 @@ apps:
   links:
     command: links
     plugs:
+      - home
       - network
       - network-bind
-      - home
-      - browser-support
 
 parts:
-  links2:
+  links:
     plugin: make
-    source: http://links.twibright.com/download/links-2.15.tar.gz
-    source-type: tar
+    source: http://links.twibright.com/download/links-${SNAPCRAFT_PROJECT_VERSION}.tar.bz2
     build-packages:
-      - make
       - gcc
       - libssl-dev
-    build: |
-      ./configure --with-ssl
+    override-build: |
+      ./configure --with-ssl --without-fb --without-x --enable-javascript
       make
-    install: |
       cp links $SNAPCRAFT_PART_INSTALL
