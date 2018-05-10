@@ -19,7 +19,7 @@ apps:
 parts:
   links:
     plugin: make
-    source: http://links.twibright.com/download/links-${SNAPCRAFT_PROJECT_VERSION}.tar.bz2
+    source: http://links.twibright.com/download/links-$SNAPCRAFT_PROJECT_VERSION.tar.bz2
     build-packages:
       - gcc
       - libssl-dev
