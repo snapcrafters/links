@@ -22,8 +22,32 @@ parts:
     source: http://links.twibright.com/download/links-$SNAPCRAFT_PROJECT_VERSION.tar.bz2
     build-packages:
       - gcc
+      - libbz2-dev
+      - libevent-dev
+      - liblz-dev
+      - liblzma-dev
+      - libgpm-dev
       - libssl-dev
+      - zlib1g-dev
+
+    stage-packages:
+      - libbz2-1.0
+      - liblzma5
+      - libevent-2.0-5
+      - libgpm2
+      - libpcre3
+      - liblz1
+      - zlib1g
     override-build: |
-      ./configure --with-ssl --without-fb --without-x --enable-javascript
+      ./configure \
+        --enable-javascript \
+        --with-ssl \
+        --without-svgalib \
+        --without-x \
+        --without-fb \
+        --without-directfb \
+        --without-libjpeg \
+        --without-librsvg \
+        --without-libtiff
       make
       cp links $SNAPCRAFT_PART_INSTALL
