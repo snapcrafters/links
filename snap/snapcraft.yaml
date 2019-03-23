@@ -1,5 +1,5 @@
 name: links
-version: '2.15'
+version: '2.18'
 summary: Web browser running in text mode
 description: |
   Links is a text mode WWW browser, similar to Lynx. It displays tables,
