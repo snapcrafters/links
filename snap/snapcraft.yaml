@@ -29,6 +29,7 @@ parts:
       - liblzma-dev
       - libgpm-dev
       - libssl-dev
+      - wget
       - zlib1g-dev
 
     stage-packages:
