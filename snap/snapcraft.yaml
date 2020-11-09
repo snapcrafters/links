@@ -13,6 +13,7 @@ apps:
     command: links
     plugs:
       - home
+      - removable-media
       - network
       - network-bind
 
