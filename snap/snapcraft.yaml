@@ -7,7 +7,7 @@ description: |
 
 grade: stable
 confinement: strict
-base: core
+base: core20
 
 apps:
   links:
@@ -36,7 +36,7 @@ parts:
     stage-packages:
       - libbz2-1.0
       - liblzma5
-      - libevent-2.0-5
+      - libevent-2.1-7
       - libgpm2
       - libpcre3
       - liblz1
